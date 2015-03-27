@@ -1,0 +1,128 @@
+###########################################################################
+$jbas
+#
+#AUXILIARY BASIS SET FOR Bi
+#
+#
+*
+###########################################################################
+bi universal-ecp-60   
+bi def2-SV(P)
+bi dhf-SV(P)
+bi def2-SVP
+bi dhf-SVP
+bi def2-TZVP
+bi dhf-TZVP
+bi def2-TZVPP
+bi dhf-TZVPP
+bi def2-QZVP
+bi dhf-QZVP
+bi def2-QZVPP
+bi dhf-QZVPP
+bi def2-SV(P)-2c
+bi dhf-SV(P)-2c
+bi def2-SVP-2c
+bi dhf-SVP-2c
+bi def2-TZVP-2c
+bi dhf-TZVP-2c
+bi def2-TZVPP-2c
+bi dhf-TZVPP-2c
+bi def2-QZVP-2c
+bi dhf-QZVP-2c
+bi def2-QZVPP-2c
+bi dhf-QZVPP-2c
+# bi    (11s5p5d3f1g) / [8s4p3d2f1g]     {41111111/2111/131/21/1}
+#errors def2-TZVP uH/atom: BiCl6- 17.3, BiF 29.7, BiF3 35.7, BiH3 41.7,
+#                          BiO2 46.9
+# F. Weigend 11/2005; Phys. Chem. Chem. Phys. 8: 1057 (2006)
+*
+    4  s
+       51.8020205       -0.2855255
+       32.1121772        1.5761605
+       19.0788827       -5.7114949
+       11.3351005       13.6149056
+    1  s
+        6.6677060      -15.1911297
+    1  s
+        2.1778861        6.9883162
+    1  s
+        1.1696389        1.8934141
+    1  s
+        0.5448910        0.4982552
+    1  s
+        0.2762376        0.3268082
+    1  s
+        0.1624927        0.0964518
+    1  s
+        0.0881553        0.0131968
+    2  p
+        3.8557206        0.0289384
+        1.5122274       -0.0641238
+    1  p
+        0.5833643        0.0499577
+    1  p
+        0.2228465        0.0150693
+    1  p
+        0.0848520        0.0006925
+    3  d
+        2.4355837        0.0063489
+        1.1371674       -0.0112341
+        0.5234833        0.0096554
+    1  d
+        0.2389664       -0.0092493
+    1  d
+        0.1087834       -0.0011776
+    2  f
+        1.4889569        0.0010265
+        0.7030956       -0.0030812
+    1  f
+        0.3321300        0.0042284
+    1  g
+        0.6087002       -0.0028321
+*
+###########################################################################
+bi 78-mwb-opt
+bi ecp-78-mwb-SVP
+bi def-SVP
+bi def-SV(P)
+bi ecp-78-mwb-TZVP
+bi def-TZVP
+#  (5s3p3d1f1g)/ [4s3p3d1f1g]  {2111/111/111/1/1}
+# RI-J atom energy:                                  dev(DFT): 0.002 mH
+# RI-J BiH3 :                                        dev(DFT): 0.076 mH
+# RI-J BiF3 :                                        dev(DFT): 0.128 mH
+# s functions optimized and contracted for Bi atom
+# d functions interpol. betweeen Pb--Po
+# p functions from auxp (p contraction calc. on BiH3)
+# f exponent = 2* eta(d) Basis/1.095
+# g function exp = 2* eta(d) Basis
+# contraction tested on BiF3
+*
+    2  s
+     1.843003            .221667214D+00
+     0.908852           -.732911816D+00
+    1  s
+     0.473618            .412653525D+00
+    1  s
+     0.255509            .263466283D+00
+    1  s
+     0.139481            .102888186D+00
+    1  p
+     0.9894532413       -.108679202D-02
+    1  p
+     0.394991            .297911781D-01
+    1  p
+     0.164579           -.880491660D-02
+    1  d
+     1.1164465          -.514269660D-02
+    1  d
+     .43619655           .131631135D-01
+    1  d
+     .17489500           .786501316D-02
+    1  f
+     .3853881278        1.0
+    1  g
+     .42200000          1.0
+*
+###########################################################################
+$end
