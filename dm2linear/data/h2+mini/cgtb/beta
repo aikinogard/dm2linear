@@ -1,0 +1,10 @@
+$uhfmo_beta    scfconv=8   format(4d20.14)                                      
+# uhf orbitals of project :
+#  --->  h2mini  <---
+# UHF total energy is       -0.5427143439 a.u.
+#
+     1  a      eigenvalue=-.57546576765823D+00   nsaos=2                        
+0.54984900369653D+000.54984900369653D+00
+     2  a      eigenvalue=0.19109952153796D+00   nsaos=2                        
+0.12017711809757D+01-.12017711809757D+01
+$end

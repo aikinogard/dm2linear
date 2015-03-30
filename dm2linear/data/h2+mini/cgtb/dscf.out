@@ -1,0 +1,432 @@
+ operating system is UNIX !
+ hostname is         gplogin1.local
+
+ dscf (gplogin1.local) : TURBOMOLE V6.6( ) 18 Mar 2015 at 17:33:10
+ Copyright (C) 2015 TURBOMOLE GmbH, Karlsruhe
+
+
+    2015-03-29 20:29:38.943 
+
+
+
+                             d s c f - program
+
+                   idea & directorship : reinhart ahlrichs
+                   program development : marco haeser
+                                         michael baer
+                           dft version : oliver treutler
+
+
+                          quantum chemistry group
+                          universitaet  karlsruhe
+                                  germany
+
+
+
+
+                          References             
+                                                 
+          TURBOMOLE:                             
+              R. Ahlrichs, M. Baer, M. Haeser, H. Horn, and
+              C. Koelmel
+              Electronic structure calculations on workstation
+              computers: the program system TURBOMOLE
+              Chem. Phys. Lett. 162: 165 (1989)
+          Density Functional:                              
+              O. Treutler and R. Ahlrichs                      
+              Efficient Molecular Numerical Integration Schemes
+              J. Chem. Phys. 102: 346 (1995)                   
+          Parallel Version:                                
+              Performance of parallel TURBOMOLE for Density    
+              Functional Calculations                          
+              M. v. Arnim and R. Ahlrichs                      
+              J. Comp. Chem. 19: 1746 (1998)                   
+                                         
+
+
+
+ UHF mode switched on !
+
+
+              +--------------------------------------------------+
+              | Atomic coordinate, charge and isotop information |
+              +--------------------------------------------------+
+
+                    atomic coordinates            atom    charge  isotop
+          0.00000000    0.00000000   -0.70000000    h      1.000     0
+          0.00000000    0.00000000    0.70000000    h      1.000     0
+ 
+       center of nuclear mass  :    0.00000000    0.00000000    0.00000000
+       center of nuclear charge:    0.00000000    0.00000000    0.00000000
+
+   *************************************************************************
+   h2mini                                                                   
+   *************************************************************************
+
+
+
+              +--------------------------------------------------+
+              |               basis set information              |
+              +--------------------------------------------------+
+
+              we will work with the 1s 3p 5d 7f 9g ... basis set
+              ...i.e. with spherical basis functions...
+
+   type   atoms  prim   cont   basis
+   ---------------------------------------------------------------------------
+    h        2      3      1   minix   [1s|3s]
+   ---------------------------------------------------------------------------
+   total:    2      6      2
+   ---------------------------------------------------------------------------
+
+   total number of primitive shells          :    3
+   total number of contracted shells         :    2
+   total number of cartesian basis functions :    2
+   total number of SCF-basis functions       :    2
+
+
+ integral neglect threshold       :  0.17E-09
+ integral storage threshold THIZE :  0.10E-04
+ integral storage threshold THIME :         5
+
+
+ symmetry group of the molecule :   c1 
+
+ the group has the following generators :
+   c1(z)
+
+    1 symmetry operations found
+
+ there are 1 real representations :   a   
+
+ maximum number of shells which are related by symmetry :  1
+
+  missing beta occupation number declaration 
+
+    mo occupation :
+   irrep   mo's   occupied
+    a        2        1
+ 
+ number of basis functions   :            2
+ number of occupied orbitals :            1
+ 
+
+          ------------------------
+          nuclear repulsion energy  :  0.714285714286    
+          ------------------------
+
+ 
+          -----------------
+          -S,T+V- integrals
+          -----------------
+
+ 1e-integrals will be neglected if expon. factor < 0.167098E-10
+ 
+   Difference densities algorithm switched on.
+   The maximal number of linear combinations of
+   difference densities is          20 .
+
+ automatic virtual orbital shift switched on 
+      shift if e(lumo)-e(homo) < 0.10000000    
+
+
+ DIIS switched on: error vector is FDS-SDF
+ Max. Iterations for DIIS is     :   5
+ DIIS matrix (see manual) 
+    Scaling factor of diagonals  :  1.200
+    threshold for scaling factor :  0.000
+
+ scf convergence criterion : increment of total energy < .1000000D-07
+                  and increment of one-electron energy < .1000000D-04
+
+
+ <geterg> : there is no data group $energy 
+
+  MOs are in ASCII format !
+
+
+ reading orbital data $uhfmo_alpha  from file alpha . 
+
+ orbital characterization : scfconv=8
+ 
+
+ reading orbital data $uhfmo_beta  from file beta . 
+
+ orbital characterization : scfconv=8
+ 
+
+ DSCF restart information will be dumped onto file alpha
+
+ 
+                                              current damping :  1.000
+ ITERATION  ENERGY          1e-ENERGY        2e-ENERGY     NORM[dD(SAO)]  TOL
+   1  -.54271434391573    -1.2570000582    0.34694469520E-170.000D+00 0.167D-09
+          max. resid. norm for Fia-block=  0.000D+00
+          Delta Eig. =    35.0897161225 eV 
+ 
+                                              current damping :  1.000
+ ITERATION  ENERGY          1e-ENERGY        2e-ENERGY     NORM[dD(SAO)]  TOL
+   2  -.54271434391573    -1.2570000582    0.34694469520E-170.000D+00 0.106D-09
+          Norm of current diis error:  0.0000    
+          max. resid. norm for Fia-block=  0.000D+00
+          Delta Eig. =    17.5448580613 eV 
+
+ ENERGY CONVERGED !
+
+ 
+                                              current damping :  1.050
+ ITERATION  ENERGY          1e-ENERGY        2e-ENERGY     NORM[dD(SAO)]  TOL
+   3  -.54271434391573    -1.2570000582    0.34694469520E-170.000D+00 0.167D-09
+          max. resid. norm for Fia-block=  0.000D+00
+ Density matrix in CAO:
+ 
+ Print from pmat
+ 
+ Lower triangle of alpha RDM in AO basis:
+  0.3023339268660684
+  0.3023339268660684  0.3023339268660684
+ END
+ 
+ Lower triangle of beta RDM in AO basis:
+  0.0000000000000000
+  0.0000000000000000  0.0000000000000000
+ END
+
+ convergence criteria satisfied after  3 iterations
+
+
+   *************************************************************************
+   h2mini                                                                   
+   *************************************************************************
+
+
+                  ------------------------------------------ 
+                 |  total energy      =     -0.54271434392  |
+                  ------------------------------------------ 
+                 :  kinetic energy    =      0.61302472994  :
+                 :  potential energy  =     -1.15573907386  :
+                 :  virial theorem    =      2.12955321121  :
+                 :  wavefunction norm =      1.00000000000  :
+                  .......................................... 
+
+
+ <geterg> : there is no data group $energy 
+
+
+ orbitals $uhfmo_beta  will be written to file beta
+
+ orbitals $uhfmo_alpha  will be written to file alpha
+ 
+ alpha: 
+
+    irrep                  1a          2a   
+ eigenvalues H         -1.25700     0.00894
+            eV         -34.2050      0.2434
+ occupation              1.0000 
+ 
+ beta:  
+
+    irrep                  1a          2a   
+ eigenvalues H         -0.57547     0.19110
+            eV         -15.6593      5.2001
+ 
+
+                                             _ _ _ 
+  IRREP     alpha occ.     beta occ.      tr(D*D-D)
+
+
+ a          1.00000000     0.00000000    -0.25000000
+
+   -------------------------------------------------
+
+   sum      1.00000000     0.00000000    -0.25000000
+
+ <S*S>     0.75000000
+
+ 
+ 
+ 
+ ==============================================================================
+                           electrostatic moments
+ ==============================================================================
+ 
+              nuc           elec       ->  total
+ ------------------------------------------------------------------------------
+                          charge      
+ ------------------------------------------------------------------------------
+           2.000000      -1.000000       1.000000
+ a-b                                     1.000000
+ 
+ ------------------------------------------------------------------------------
+                       dipole moment  
+ ------------------------------------------------------------------------------
+   x       0.000000       0.000000       0.000000
+   y       0.000000       0.000000       0.000000
+   z       0.000000       0.000000       0.000000
+ 
+   | dipole moment | =     0.0000 a.u. =     0.0000 debye 
+ 
+ ------------------------------------------------------------------------------
+                     quadrupole moment
+ ------------------------------------------------------------------------------
+  xx       0.000000      -0.655561      -0.655561
+  yy       0.000000      -0.655561      -0.655561
+  zz       0.980000      -0.985270      -0.005270
+  xy       0.000000       0.000000       0.000000
+  xz       0.000000       0.000000       0.000000
+  yz       0.000000       0.000000       0.000000
+ 
+     1/3  trace=      -0.438798
+     anisotropy=       0.650291
+
+ CONSTRUCTING NATURAL ORBITALS ...
+
+ Print overlap matrix
+  1.0000000000000004
+  0.6538005019248012  1.0000000000000004
+ END
+
+
+ total number of electrons =     1.00000000000000
+
+ => charge of molecule     =     1.00000000000000
+
+
+
+
+------------------------------------------------------------------------
+
+   Population Analysis Based On Occupation Numbers (PABOON)
+
+------------------------------------------------------------------------
+
+ 
+ CHOICE OF MAOs:
+MAOs are selected due to their eigenvalues; determination of their number: 
+ automatic; mixing options fix and eigenvalue thr=0.1
+ 
+ ... and this is your MAO selection:
+ (atoms for which the two selection methods (fixed/threshold) yield
+ different numbers of MAOs are marked by an *)
+ 
+   atom   nr. of MAOs      selection criterion
+    1 h          1               eig
+    2 h          1               eig
+ 
+
+
+************************************************************************
+*                                                                      *
+*                     unassigned charge =  -0.000000                   *
+*                                                                      *
+************************************************************************
+
+
+
+************************************************************************
+*                                                                      *
+*                       hypervalent contributions                      *
+*                                                                      *
+************************************************************************
+
+              h    1           -0.000000
+              h    2           -0.000000
+
+
+************************************************************************
+*                                                                      *
+*                        shared electron numbers                       *
+*                                                                      *
+************************************************************************
+
+
+
+ TWO center shared electron numbers ge 0.1000E-01 :
+
+  shared electron number for the pair       1 h  -   2 h   =     0.6538
+
+
+************************************************************************
+*                                                                      *
+*              atomic charges with multicenter corrections             *
+*              AS RESULTING FROM 2-CENTER SEN CONTRIBUTIONS            *
+*                                                                      *
+************************************************************************
+
+                        -------------------------
+                           atom   |     charge   
+                        -------------------------
+                            1 h   |    0.5000
+                            2 h   |    0.5000
+                        -------------------------
+
+
+************************************************************************
+*                                                                      *
+*              atomic charges with multicenter corrections             *
+*                                                                      *
+************************************************************************
+
+                        -------------------------
+                           atom   |     charge   
+                        -------------------------
+                            1 h   |    0.5000
+                            2 h   |    0.5000
+                        -------------------------
+
+ 
+ moments (from total density versus population analysis)
+ <charge> =             1.000000            1.000000
+ <xx  >   =            -0.655561            0.000000
+ <yy  >   =            -0.655561            0.000000
+ <zz  >   =            -0.005270            0.490000
+ <xy  >   =             0.000000            0.000000
+ <xz  >   =             0.000000            0.000000
+ <yz  >   =             0.000000            0.000000
+
+ 
+ 
+ ==============================================================================
+                      CALCULATION OF QUANTITIES ON GRID
+ ==============================================================================
+ 
+ 
+ output format: v1,v2,f(v1,v2)
+ output format: v1,v2,f(v1,v2)
+ Reasonable settings for gnuplot contour plots are in file 'gnuset'.
+ Call gnuplot and use it by typing: 'load "gnuset"'
+ ... and then follow further instructions ...
+ 
+ 
+ quantities to be calculated are 
+ density                     file: ..d.vec
+ 
+ calculation at a plane of  500*  201 points
+ 
+ origin at            0.00000        0.00000        0.00000
+ 
+ normalised grid vectors:
+                        x              y              z
+  1. vector:         0.00000        0.00000        1.00000
+  2. vector:         0.00000        1.00000        0.00000
+ 
+                     minimum       increment       maximum
+  1. vector:        -8.00000        0.03206        8.00000
+  2. vector:        -5.00000        0.05000        5.00000
+ 
+ 
+ ==============================================================================
+ 
+
+
+    ------------------------------------------------------------------------
+         total  cpu-time :   0.87 seconds
+         total wall-time :   1.95 seconds
+    ------------------------------------------------------------------------
+
+
+   ****  dscf : all done  ****
+
+
+    2015-03-29 20:29:40.876 
+

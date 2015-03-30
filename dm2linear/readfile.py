@@ -1,6 +1,7 @@
 import re
 import numpy as np
 from cgtbints import contracted_overlap2
+from pyints import fact2
 
 def get_lmn(order):
 	if order==0:
@@ -109,12 +110,12 @@ def read_basis_lib(path,atoms=['h'],bftype='universal'):
 		output[atom] = atom_basis
 	return output
 
-def read_dm(head,filename):
+def read_dscf(head,filename):
 	"""
-		read the density matrix from turbomole output
+		read the matrix from turbomole output
 	"""
 
-	print 'input density matrix from:',filename
+	print 'input matrix (head:%s) from: %s'%(head,filename)
 	with open(filename,'r') as f:
 		fc = f.read()
 	m = re.search(head + r'.*?\n(.*?)END', fc, re.DOTALL)
@@ -126,6 +127,33 @@ def read_dm(head,filename):
 	mat[np.tril_indices(dim)] = lin_mat
 	mat = mat+mat.T-np.diag(mat.diagonal())
 	return mat
+
+def get_norm_constant_gtb(gtb):
+	"""
+		return the normalization constant
+		THO66 Eq.(2.2)
+	"""
+	(alpha,(l,m,n),A) = gtb
+	up = pow(2,2*(l+m+n)+1.5)*pow(alpha,l+m+n+1.5)
+	down = fact2(2*l-1)*fact2(2*m-1)*fact2(2*n-1)*pow(np.pi,1.5)
+	return np.sqrt(up/down)
+
+def norm_cgtb(cgtb):
+	"""
+		normalize each gtb and combine with coeff and then norm cgtb again
+	"""
+	(alpha_list,coeff_list,lmn,A) = cgtb
+	# normalize each gtb
+	coeff_list_N1 = []
+	for mu1,alpha in enumerate(alpha_list):
+		N1 = get_norm_constant_gtb((alpha,lmn,A))
+		coeff_list_N1.append(coeff_list[mu1]*N1)
+	# combine
+	cgtb_N1 = (alpha_list,coeff_list_N1,lmn,A)
+	# normalize cgtb
+	N2 = 1./np.sqrt(contracted_overlap2(cgtb_N1,cgtb_N1))
+	coeff_list_N2 = [c*N2 for c in coeff_list_N1]	
+	return (alpha_list,coeff_list_N2,lmn,A)
 
 def create_basis_list(basis,coord):
 	"""
@@ -156,11 +184,9 @@ def create_basis_list(basis,coord):
 			for single_basis in basis[atom[0]]:
 				if single_basis[0] == order:
 					for lmn in get_lmn(order):
-						cgtb_raw = (single_basis[1],single_basis[2],lmn,atom[1])
-						norm = contracted_overlap2(cgtb_raw,cgtb_raw)
-						new_coeff = [c/np.sqrt(norm) for c in single_basis[2]]
-						cgtb = (single_basis[1],new_coeff,lmn,atom[1])
-						bf.append(cgtb)
+						cgtb = (single_basis[1],single_basis[2],lmn,atom[1])
+						bf.append(norm_cgtb(cgtb))
+	print 'Basis set includes %d cgtb functions.'%len(bf)
 	return bf
 
 if __name__ == '__main__':
