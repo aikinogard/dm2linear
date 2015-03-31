@@ -37,7 +37,7 @@ def test_density(data_path,auxbasis_path,show_td=False):
 	print dscf_S
 	print dscf_S.shape
 	print dm.shape
-	print 'trace =',np.trace(np.dot(dscf_S,dm))
+#	print 'trace =',np.trace(np.dot(dscf_S,dm))
 	print '\n'
 
 	c = dm2linear.cgtbints.dm2linear(dm,dm_bf,lin_bf)
@@ -66,7 +66,7 @@ def test_density(data_path,auxbasis_path,show_td=False):
 	if show_td:
 		vec = np.loadtxt(data_path+'td.vec')
 		for y in [0,1,2,3]:
-			plt.plot(vec[vec[:,1]==y,0],vec[vec[:,1]==y,2],'k.',label='td.vec y='+str(y))
+			plt.plot(vec[vec[:,1]==y,0],vec[vec[:,1]==y,2],'k:',label='td.vec y='+str(y))
 
 	plt.legend(loc=0)
 	plt.show()
@@ -79,7 +79,10 @@ if __name__=='__main__':
 	test_density(data_path='../data/h2+mini/gtb',auxbasis_path='../data/auxbasis/',show_td=True)
 ## test h2+ on an artificial basis with only one contracted gtb on each atom
 	test_density(data_path='../data/h2+mini/cgtb',auxbasis_path='../data/auxbasis/',show_td=True)
+## test h2+ on def2-SV(P) basis
+	test_density(data_path='../data/h2+SV-P',auxbasis_path='../data/auxbasis/',show_td=True)
+## test h2+ on def2-SVP basis
+	test_density(data_path='../data/h2+SVP',auxbasis_path='../data/auxbasis/',show_td=True)
 ## test h2+ on def2-QZVPPD basis, by different atomic distance
 	for b in [1.0,3.0,5.0,7.0,11.0]:
-		test_density(data_path='../data/h2+/'+str(b),auxbasis_path='../data/auxbasis/',show_td=True)
-
+		test_density(data_path='../data/h2+QZVPPD/'+str(b),auxbasis_path='../data/auxbasis/',show_td=True)

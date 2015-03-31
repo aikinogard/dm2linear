@@ -152,7 +152,9 @@ def norm_cgtb(cgtb):
 	cgtb_N1 = (alpha_list,coeff_list_N1,lmn,A)
 	# normalize cgtb
 	N2 = 1./np.sqrt(contracted_overlap2(cgtb_N1,cgtb_N1))
-	coeff_list_N2 = [c*N2 for c in coeff_list_N1]	
+	# Turbomole phase factor convention
+	phase = pow(-1,np.sum(lmn))
+	coeff_list_N2 = [c*N2*phase for c in coeff_list_N1]	
 	return (alpha_list,coeff_list_N2,lmn,A)
 
 def create_basis_list(basis,coord):
